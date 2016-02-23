@@ -1,14 +1,18 @@
 #include "LedBtnControl.h"
 
-LedBtnControl::LedBtnControl(uint8_t ledPin, uint8_t btnPin){
+LedBtnControl::LedBtnControl(uint8_t ledPin, uint8_t btnPin, char color){
 	this->LedPin=ledPin;
 	this->BtnPin=btnPin;
 	this->status=LOW;
+	this->Color=color;
 	pinMode(this->LedPin,OUTPUT);
 	pinMode(this->BtnPin,INPUT);
 }
 
 bool LedBtnControl::getLedState(){ return status; }
+
+char LedBtnControl::getColor(){ return Color; }
+
 
 void LedBtnControl::on(void){
 	digitalWrite(LedPin,HIGH);

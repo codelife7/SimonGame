@@ -5,15 +5,17 @@
 
 class LedBtnControl{
   public:
-    LedBtnControl(uint8_t ledPin, uint8_t btnPin);
+    LedBtnControl(uint8_t ledPin, uint8_t btnPin, char color);
 	bool getLedState();
 	bool getBtnState();
-    void on();
+	char getColor();
+    	void on();
 	void off();
 	void toggle();
 	void blink(unsigned int time, byte times=1);
-
+	
   private:
+	char Color;
 	bool status;
 	uint8_t LedPin;
 	uint8_t BtnPin;
