@@ -196,8 +196,6 @@ bool PersonNear() {
 }
 
 void loop() {
-
-
   if (PersonNear())
   {
     int i = 0;
@@ -355,7 +353,7 @@ A:
       if (level % 3 == 0)
         life++;
     }
-    else if (life = 0 || levelClear == false) {
+    if (life == 1 || levelClear == false) {
       endGame();
       Serial.println("game end");
     }
@@ -365,8 +363,9 @@ A:
 void endGame() {
   lcd.clear();
   lcd.setCursor(0, 0);
-  lcd.autoscroll();
-  lcd.print("Click reset button ");
+  lcd.print("You Lost!");
+  lcd.setCursor(0, 1);
+  lcd.print("Click Reset!!");
   Endgame_tone();
-  delay(1000000);
+  delay(10000000);
 }
